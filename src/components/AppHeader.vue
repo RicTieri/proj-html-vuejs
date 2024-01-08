@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <a href="#">order online</a>
+      <a href="#" class="bg-red">order online</a>
       <ul>
         <li>
           <a href="#">
@@ -42,7 +42,11 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 header{
-  background-image: url(../assets/img/cielostellato.PNG)
+  background-image: url(../assets/img/cielostellato.PNG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 0
 }
 
 nav{
@@ -50,6 +54,10 @@ nav{
   padding: 2rem;
   text-transform: uppercase;
   color: white;
+
+ .bg-red{
+    background-color: $fill-red;
+  }
 
   a{
     @include flex(row, space-between, center);
