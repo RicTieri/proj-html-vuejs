@@ -2,7 +2,7 @@
   <div class="jumbo-container">
     <button>prev</button>
     <img src="../assets/img/h3-rev-img-6.png" alt="jumbo">
-    <button>next</button>
+    <button class="l-btn">next</button>
   </div>
 </template>
 <script>
@@ -21,5 +21,15 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 4rem;
+
+  button{
+    @include btn-rounded-corner;
+    writing-mode: vertical-rl;
+    color: $fill-red;
+    font-size: .6rem;
+    &.l-btn{
+      @include rotate
+    }
+  }
 }
 </style>

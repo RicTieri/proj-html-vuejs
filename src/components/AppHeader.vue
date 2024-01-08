@@ -26,13 +26,13 @@
         <a href="#">search</a>
       </div>
     </nav>
-    <HeaderJumbo/>
+    <HeaderJumbo />
   </header>
 </template>
 <script>
 import HeaderJumbo from './HeaderJumbo.vue';
 export default {
-  components:{
+  components: {
     HeaderJumbo
   }
 }
@@ -41,7 +41,7 @@ export default {
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
-header{
+header {
   background-image: url(../assets/img/cielostellato.PNG);
   background-position: center;
   background-repeat: no-repeat;
@@ -49,21 +49,27 @@ header{
   padding: 2rem 0
 }
 
-nav{
+nav {
   @include flex(row, space-between, center);
-  padding: 2rem;
+  padding: 2rem 0;
+  width: 80%;
+  margin: 0 auto;
   text-transform: uppercase;
   color: white;
 
- .bg-red{
-    background-color: $fill-red;
-  }
-
-  a{
+  a {
     @include flex(row, space-between, center);
     text-decoration: none;
     color: white;
-    padding: 1rem;
+    width: 100%;
+    padding: .5rem;
+
+    &.bg-red {
+      background-color: $fill-red;
+      min-width: 150px;
+      max-width: 150px;
+      padding: .5rem 1rem;
+    }
 
     >img {
       width: 35px;
@@ -72,20 +78,20 @@ nav{
     }
   }
 
-  ul{
+  ul {
     @include flex(row, space-around, center);
-    list-style:none;
-    li{
-      >img{
+    list-style: none;
+
+    li {
+      >img {
         height: 100px;
       }
     }
   }
 
-  div{
+  div {
     @include flex(row, space-between, center)
   }
 
 }
-  
 </style>

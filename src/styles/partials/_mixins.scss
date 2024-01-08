@@ -4,3 +4,16 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin btn-rounded-corner{
+  border-bottom-right-radius: 80px;
+  border-top-right-radius: 80px;
+  height: 80px;
+  padding: 0 1rem 0 .25rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@mixin rotate{
+  transform: rotate(180deg);
+}
