@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <div class="wrapper">
-      <MemberCard v-for="member in team"
-      :member="member"
-      />
+      <MemberCard v-for="member in team" :member="member" />
+      <a href="#" class="pizza-popup">
+        <img src="../assets/svg/svg-4.svg" alt="pizza popup">
+      </a>
     </div>
     <div class="wrapper bg-light">
       <a v-for="client in clients" :href="client.link">
-      <img :src="getImageUrl(client.src)" alt="client.clientName">
+        <img :src="getImageUrl(client.src)" alt="client.clientName">
       </a>
     </div>
   </div>
@@ -18,78 +19,78 @@ import MemberCard from './MemberCard.vue';
 export default {
   data() {
     return {
-      team:[
+      team: [
         {
-          profilePic:'h1-team-1a-700x700.jpg',
-          name:'Frank Bailey',
-          role:'Kitchen Porter',
-          social:{
-            instagram:'#',
-            twitter:'#',
-            facebook:'#'
+          profilePic: 'h1-team-1a-700x700.jpg',
+          name: 'Frank Bailey',
+          role: 'Kitchen Porter',
+          social: {
+            instagram: '#',
+            twitter: '#',
+            facebook: '#'
           }
         },
         {
-          profilePic:'h1-team-2a.jpg',
-          name:'Ashley Mc Gregor',
-          role:'waitress',
-          social:{
-            instagram:'#',
-            twitter:'#',
-            facebook:'#'
+          profilePic: 'h1-team-2a.jpg',
+          name: 'Ashley Mc Gregor',
+          role: 'waitress',
+          social: {
+            instagram: '#',
+            twitter: '#',
+            facebook: '#'
           }
         },
         {
-          profilePic:'h1-team-3a.jpg',
-          name:'Jessee Portland',
-          role:'Marketing',
-          social:{
-            instagram:'#',
-            twitter:'#',
-            facebook:'#'
+          profilePic: 'h1-team-4a.jpg',
+          name: 'Jonathan Bailey',
+          role: 'chef',
+          social: {
+            instagram: '#',
+            twitter: '#',
+            facebook: '#'
           }
         },
         {
-          profilePic:'h1-team-4a.jpg',
-          name:'Jonathan Bailey',
-          role:'chef',
-          social:{
-            instagram:'#',
-            twitter:'#',
-            facebook:'#'
+          profilePic: 'h1-team-3a.jpg',
+          name: 'Jessee Portland',
+          role: 'Marketing',
+          social: {
+            instagram: '#',
+            twitter: '#',
+            facebook: '#'
           }
         },
       ],
-      clients:[
+      clients: [
         {
-          clientName:'abc',
-          src:'h1-clients-img-4.png',
-          link:'#'
-        },
-        {          
-          clientName:'abc',
-          src:'h1-clients-img-3.png',
-          link:'#'  
+          clientName: 'abc',
+          src: 'h1-clients-img-4.png',
+          link: '#'
         },
         {
-          clientName:'abc',
-          src:'h1-clients-img-1.png',
-          link:'#'  
+          clientName: 'abc',
+          src: 'h1-clients-img-3.png',
+          link: '#'
         },
         {
-          clientName:'abc',
-          src:'h1-clients-img-2.png',
-          link:'#'  
+          clientName: 'abc',
+          src: 'h1-clients-img-1.png',
+          link: '#'
         },
         {
-          clientName:'abc',
-          src:'h1-clients-img-5.png',
-          link:'#'  
+          clientName: 'abc',
+          src: 'h1-clients-img-2.png',
+          link: '#'
+        },
+        {
+          clientName: 'abc',
+          src: 'h1-clients-img-5.png',
+          link: '#'
         },
       ]
     }
   },
-  components:{
+  components: {
     MemberCard
   },
   methods: {
@@ -102,19 +103,25 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
-  
-.wrapper{
-  @include flex(row,center,center);
+
+.wrapper {
+  @include flex(row, center, center);
+  position: relative;
   margin-bottom: .5rem;
 
-  &.bg-light{
+  &.bg-light {
     padding: 5rem 0;
     background-color: $bg-light;
 
-    img{
+    img {
       width: 250px;
     }
   }
 }
 
+a.pizza-popup {
+  @include flex(row, center, center);
+  @include pop-up-pizza(3rem, 2rem);
+  background-color: $bg-light;
+}
 </style>
