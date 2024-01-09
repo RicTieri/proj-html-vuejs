@@ -57,6 +57,7 @@ export default {
   button{
     @include btn-rounded-corner;
     writing-mode: vertical-rl;
+    background-color: white;
     color: $fill-red;
     font-size: .6rem;
     &.l-btn{

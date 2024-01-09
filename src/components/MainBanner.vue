@@ -22,6 +22,9 @@
       </span>
     </div>
     <button @click="nextTestimonial" class="l-btn">next</button>
+    <a href="#" class="pizza-popup">
+      <img src="../assets/svg/svg-4.svg" alt="pizza popup">
+    </a>
   </div>
 </template>
 <script>
@@ -49,7 +52,7 @@ export default {
       testimonials:[
         {
           content:'"FORGET THE TRENDY PIZZA SHOPS, THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES"',
-          credit:'washinton post 2018'
+          credit:'washington post 2018'
         },
         {
           content: '"AN AMAZING PIZZA EXPERIENCE, THE TASTE IS UNMATCHED"',
@@ -124,21 +127,25 @@ export default {
 .testimonials{
    background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
    background-position: center;
+   background-size: cover;
+   margin-bottom: .5rem;
    min-height: 400px;
+   position: relative;
    text-align: center;
    text-transform: uppercase;
   
   div.testimonials-wrapper{
     padding: 4rem 0;
-    width: 30%;
+    width: 35%;
     font-weight: bold;
   }
 
    p{
     margin-bottom: 1rem;
+    font-size: 1.2rem;
      &.quotation-marks{
       height: 70px;
-      transform: rotate(180deg);
+      @include rotate;
 
       img{
         height: 100%;
@@ -146,7 +153,9 @@ export default {
      }
 
      &.text-red{
-      color: $fill-red
+      color: $fill-red;
+      font-size: .8rem;
+      font-weight: 500;
      }
    }
    
@@ -168,12 +177,18 @@ export default {
    button{
        @include btn-rounded-corner;
        writing-mode: vertical-rl;
+       background-color: white;
        color: $fill-red;
        border: none;
        font-size: .6rem;
        &.l-btn{
          @include rotate
        }
+     }
+
+     a.pizza-popup{
+      @include flex(row,center,center);
+      @include pop-up-pizza(2rem, 2rem)
      }
 }
 

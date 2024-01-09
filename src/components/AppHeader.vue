@@ -64,13 +64,11 @@ nav {
     @include flex(row, space-between, center);
     text-decoration: none;
     color: white;
-    width: 100%;
+
     padding: .5rem .75rem;
 
     &.bg-red {
       background-color: $fill-red;
-      min-width: 150px;
-      max-width: 150px;
       padding: .5rem 1rem;
     }
 
