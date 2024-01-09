@@ -46,13 +46,14 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2rem 0
+  padding: 2rem 0;
+  margin-bottom: .5rem
 }
 
 nav {
   @include flex(row, space-between, center);
   padding: 2rem 0;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   text-transform: uppercase;
   color: white;
@@ -62,7 +63,7 @@ nav {
     text-decoration: none;
     color: white;
     width: 100%;
-    padding: .5rem;
+    padding: .5rem .75rem;
 
     &.bg-red {
       background-color: $fill-red;
