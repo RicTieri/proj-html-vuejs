@@ -23,7 +23,9 @@
           <img src="../assets/svg/svg-1.svg" alt="cart">
           cart
         </a>
-        <a href="#">search</a>
+        <a href="#">
+          <img src="../assets/img/iconmonstr-magnifier-4-240.png" alt="magnifier" class="reverse">
+          search</a>
       </div>
     </nav>
     <HeaderJumbo />
@@ -76,6 +78,11 @@ nav {
       width: 35px;
       padding: .25rem;
       filter: invert(1);
+
+      &.reverse{
+        scale: 0.7;
+        transform: scaleX(-1)
+      }
     }
   }
 

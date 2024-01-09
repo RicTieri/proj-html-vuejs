@@ -6,10 +6,15 @@
   </div>
   <div class="container testimonials">
     <button @click="prevTestimonial">prev</button>
-    <div>
-      <p class="text-gold">"</p>
+    <div class="testimonials-wrapper">
+      <p class="quotation-marks">
+        <img src="../assets/img/iconmonstr-quote-3-240.png" alt="quotation marks">
+      </p>
       <p>{{ testimonials[currentTestimonial].content }}</p>
       <p class="text-red">{{ testimonials[currentTestimonial].credit }}</p>
+      <span v-for="(element, index) in testimonials" :class="(index == currentTestimonial) ? 'active' : ''">
+        <img src="../assets/img/iconmonstr-shape-19-240.png" alt="dot">
+      </span>
     </div>
     <button @click="nextTestimonial" class="l-btn">next</button>
   </div>
@@ -86,13 +91,26 @@ export default {
 }
 .testimonials{
    background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
+   background-position: center;
+   min-height: 400px;
    text-align: center;
    text-transform: uppercase;
   
+  div.testimonials-wrapper{
+    padding: 4rem 0;
+    width: 30%;
+    font-weight: bold;
+  }
+
    p{
-     &.text-gold{
-      font-size: 6rem;
-      color: $fill-gold;
+    margin-bottom: 1rem;
+     &.quotation-marks{
+      height: 70px;
+      transform: rotate(180deg);
+
+      img{
+        height: 100%;
+      }
      }
 
      &.text-red{
@@ -100,6 +118,21 @@ export default {
      }
    }
    
+   span{
+    display: inline-block;
+    height: 10px;
+    margin: .25rem;
+    filter: opacity(0.2);
+    
+    img{
+     height: 100%
+    }
+     &.active{
+      filter: opacity(1)
+    }
+
+   }
+
    button{
        @include btn-rounded-corner;
        writing-mode: vertical-rl;
