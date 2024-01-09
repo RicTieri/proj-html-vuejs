@@ -2,6 +2,11 @@
   <div class="container">
     <div class="showcase" v-for="element in showcase">
       <img :src="getImageUrl(element.src)" alt="don peppe">
+      <div class="view">
+        <a href="#">
+          <img src="../assets/img/iconmonstr-eye-lined-240.png" alt="view">
+        </a>
+      </div>
     </div>
   </div>
   <div class="container testimonials">
@@ -83,11 +88,38 @@ export default {
 }
 .showcase{
   width: calc(100% / 4);
+  position: relative;
   
   & img{
     display: block;
     width: 100%;
   }
+  
+  &:hover .view{
+    @include flex(row,center,center);
+  }
+  
+  .view{
+    display: none;
+    background-image: url(../assets/img/dotted-bgd.png);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    a{
+      height: 60px;
+      border-radius: 50%;
+      padding: 1rem;
+      background-color: $fill-red;
+      img{
+        height: 100%;
+      }
+    }
+  }
+
 }
 .testimonials{
    background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
