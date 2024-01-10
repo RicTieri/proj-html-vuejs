@@ -162,7 +162,7 @@ footer {
 
     .txt-white {
       color: white;
-      line-height: 2.2rem;
+      font-size: 1.6rem;
     }
 
     >img {

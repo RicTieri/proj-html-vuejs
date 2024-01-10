@@ -31,7 +31,7 @@
 export default {
   data() {
     return {
-      showcase:[
+      showcase: [
         {
           src: 'h3-img-1.jpg',
           link: '#'
@@ -49,10 +49,10 @@ export default {
           link: '#'
         },
       ],
-      testimonials:[
+      testimonials: [
         {
-          content:'"FORGET THE TRENDY PIZZA SHOPS, THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES"',
-          credit:'washington post 2018'
+          content: '"FORGET THE TRENDY PIZZA SHOPS, THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES"',
+          credit: 'washington post 2018'
         },
         {
           content: '"AN AMAZING PIZZA EXPERIENCE, THE TASTE IS UNMATCHED"',
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    getImageUrl: function(path) {
+    getImageUrl: function (path) {
       return new URL(`../assets/img/${path}`, import.meta.url).href;
     },
     nextTestimonial() {
@@ -83,26 +83,27 @@ export default {
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
-.container{
+.container {
   @include flex(row, space-between, center);
   gap: .5rem;
   margin-bottom: .5rem;
 
 }
-.showcase{
+
+.showcase {
   width: calc(100% / 4);
   position: relative;
-  
-  & img{
+
+  & img {
     display: block;
     width: 100%;
   }
-  
-  &:hover .view{
-    @include flex(row,center,center);
+
+  &:hover .view {
+    @include flex(row, center, center);
   }
-  
-  .view{
+
+  .view {
     display: none;
     background-image: url(../assets/img/dotted-bgd.png);
     background-size: cover;
@@ -112,85 +113,89 @@ export default {
     top: 0;
     left: 0;
 
-    a{
+    a {
       height: 60px;
       border-radius: 50%;
       padding: 1rem;
       background-color: $fill-red;
-      img{
+
+      img {
         height: 100%;
       }
     }
   }
 
 }
-.testimonials{
-   background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
-   background-position: center;
-   background-size: cover;
-   margin-bottom: .5rem;
-   min-height: 400px;
-   position: relative;
-   text-align: center;
-   text-transform: uppercase;
-  
-  div.testimonials-wrapper{
+
+.testimonials {
+  background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: .5rem;
+  min-height: 400px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+
+  div.testimonials-wrapper {
     padding: 4rem 0;
     width: 35%;
     font-weight: bold;
   }
 
-   p{
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-     &.quotation-marks{
+  p {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+
+    &.quotation-marks {
+      margin-bottom: 1rem;
       height: 70px;
       @include rotate;
 
-      img{
+      img {
         height: 100%;
       }
-     }
+    }
 
-     &.text-red{
+    &.text-red {
+      margin-bottom: 1rem;
       color: $fill-red;
-      font-size: .8rem;
-      font-weight: 500;
-     }
-   }
-   
-   span{
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  span {
     display: inline-block;
-    height: 10px;
+    height: 8px;
     margin: .25rem;
     filter: opacity(0.2);
-    
-    img{
-     height: 100%
+
+    img {
+      height: 100%
     }
-     &.active{
+
+    &.active {
       filter: opacity(1)
     }
 
-   }
+  }
 
-   button{
-       @include btn-rounded-corner;
-       writing-mode: vertical-rl;
-       background-color: white;
-       color: $fill-red;
-       border: none;
-       font-size: .6rem;
-       &.l-btn{
-         @include rotate
-       }
-     }
+  button {
+    @include btn-rounded-corner;
+    writing-mode: vertical-rl;
+    background-color: white;
+    color: $fill-red;
+    border: none;
+    font-size: .6rem;
 
-     a.pizza-popup{
-      @include flex(row,center,center);
-      @include pop-up-pizza(2rem, 2rem)
-     }
-}
+    &.l-btn {
+      @include rotate
+    }
+  }
 
-  
-</style>
+  a.pizza-popup {
+    @include flex(row, center, center);
+    @include pop-up-pizza(2rem, 2rem)
+  }
+}</style>

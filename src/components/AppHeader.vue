@@ -20,7 +20,10 @@
       </ul>
       <div>
         <a href="#">
-          <img src="../assets/svg/svg-1.svg" alt="cart">
+          <div class="cart-counter">
+            <span class="counter">13</span>
+            <img src="../assets/svg/svg-1.svg" alt="cart">
+          </div>
           cart
         </a>
         <a href="#">
@@ -54,6 +57,7 @@ header {
 
 nav {
   @include flex(row, space-between, center);
+  font-size: 1.3rem;
   padding: 2rem 0;
   width: 60%;
   margin: 0 auto;
@@ -65,14 +69,14 @@ nav {
     text-decoration: none;
     color: white;
 
-    padding: .5rem .75rem;
+    padding: .5rem 1rem;
 
     &.bg-red {
       background-color: $fill-red;
       padding: .5rem 1rem;
     }
 
-    >img {
+    img {
       width: 35px;
       padding: .25rem;
       filter: invert(1);
@@ -81,6 +85,24 @@ nav {
         scale: 0.7;
         transform: scaleX(-1)
       }
+
+    }
+  }
+  div.cart-counter{
+    position: relative;
+
+    .counter{
+      position: absolute;
+      bottom: 10px;
+      left: -5px;
+      width: 18px;
+      line-height: 18px;
+      font-size: .7rem;
+      border-radius: 50%;
+      text-align: center;
+      display: inline-block;
+      background-color: $bg-light;
+      color: black
     }
   }
 

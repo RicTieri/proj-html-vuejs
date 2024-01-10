@@ -106,7 +106,7 @@ export default {
     position: absolute;
     text-transform: uppercase;
     color: white;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 600;
     width: 20%;
     top: 20%;

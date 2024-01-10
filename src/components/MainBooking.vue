@@ -44,6 +44,7 @@ export default {
 .container {
   background-image: url(../assets/img/h3-background-img-3.jpg);
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   padding: 6rem 0;
   margin-bottom: .5rem;

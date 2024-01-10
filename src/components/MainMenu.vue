@@ -76,7 +76,7 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 .menu-heading {
-  width: 30%;
+  width: 25%;
   margin: 0 auto;
   text-align: center;
   padding: 6rem 0;
@@ -86,17 +86,18 @@ export default {
     text-transform: uppercase;
     color: $fill-red;
     font-weight: 600;
-    font-size: .8rem;
     margin-bottom: 1rem;
   }
 
   h1 {
     text-transform: uppercase;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
   }
 
   p {
     line-height: 1.8rem;
+    font-size: 1.1rem;
     color: $text-grey;
   }
 }
@@ -135,7 +136,7 @@ export default {
 
 a.pizza-popup {
   @include flex(row, center, center);
-  @include pop-up-pizza(25rem, 2rem);
+  @include pop-up-pizza(35rem, 2rem);
   background-color: $bg-light;
 }
 </style>

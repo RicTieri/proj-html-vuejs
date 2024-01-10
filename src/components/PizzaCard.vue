@@ -36,6 +36,7 @@ export default {
 .menu-container{
   width: 13%;
   text-align: center;
+  font-size: 1.3rem;
   
   .img-wrapper{
     position: relative;
