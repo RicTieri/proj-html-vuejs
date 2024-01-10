@@ -10,6 +10,14 @@
     <a href="#" class="pizza-popup">
       <img src="../assets/svg/svg-4.svg" alt="pizza popup">
     </a>
+    <div class="chart-popup">
+      <a href="#" class="bg-load">
+        <img src="../assets/svg/svg-7.svg" alt="load">
+      </a>
+      <a href="#">
+        <img src="../assets/svg/svg-9.svg" alt="chart">
+      </a>
+    </div>
   </div>
 </template>
 <script>
@@ -95,8 +103,34 @@ export default {
 
 .wrapper {
   @include flex(row, space-evenly, center);
-  margin-bottom: 12rem;
+  padding-bottom: 12rem;
   position: relative;
+
+  .chart-popup{
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 40px;
+    z-index: 1;
+    
+    a{
+      display: inline-block;
+      padding: .7rem;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      
+      &.bg-load{
+        background-color: $fill-load;
+        margin-bottom: .5rem;
+      }
+
+      img{
+        width: 100%
+      }
+    }
+  }
+
 }
 
 a.pizza-popup {

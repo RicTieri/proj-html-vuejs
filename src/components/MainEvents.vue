@@ -20,7 +20,13 @@
       </div>
     </div>
     <div class="wrapper">
-      <img src="../assets/img/h3-img-5a.jpg" alt="">
+      <img src="../assets/img/h3-img-5a.jpg" alt="fumetto pizza">
+      <a href="#" class="pizza-popup up">
+        <img src="../assets/svg/svg-4.svg" alt="pizza popup">
+      </a>
+      <a href="#" class="pizza-popup down">
+        <img src="../assets/svg/svg-4.svg" alt="pizza popup">
+      </a>
     </div>
   </div>
 </template>
@@ -28,24 +34,24 @@
 export default {
   data() {
     return {
-      events:[
+      events: [
         {
-          day:'02',
-          month:'nov',
-          name:'TRADITIONAL NEAPOLITAN PIES IN KYOTO PIZZA MERCATO',
-          location:'204 E.pizzetta Tommaso'
+          day: '02',
+          month: 'nov',
+          name: 'TRADITIONAL NEAPOLITAN PIES IN KYOTO PIZZA MERCATO',
+          location: '204 E.pizzetta Tommaso'
         },
         {
-          day:'03',
-          month:'nov',
-          name:'TERRAZZA PATIO DINING SPACE OPENING THIS WEEKEND',
-          location:'204 E.pizzetta Tommaso'
+          day: '03',
+          month: 'nov',
+          name: 'TERRAZZA PATIO DINING SPACE OPENING THIS WEEKEND',
+          location: '204 E.pizzetta Tommaso'
         },
         {
-          day:'05',
-          month:'nov',
-          name:'SIENNA PRIVATE DINING ROOM WITH STÉPHANE BRUNN',
-          location:'204 E.pizzetta Tommaso'
+          day: '05',
+          month: 'nov',
+          name: 'SIENNA PRIVATE DINING ROOM WITH STÉPHANE BRUNN',
+          location: '204 E.pizzetta Tommaso'
         },
       ]
     }
@@ -56,59 +62,61 @@ export default {
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
-.container{
-@include flex(row,center,flex-start);
-margin-bottom: .5rem;
+.container {
+  @include flex(row, center, flex-start);
+  margin-bottom: .5rem;
 
-  .wrapper{
+  .wrapper {
     width: 50%;
     height: 100%;
-    
-    &.bg-star{
+    position: relative;
+
+    &.bg-star {
       padding: 6rem 10rem;
       background-image: url(../assets/img/cielostellato.PNG);
-      
-      h1{
+
+      h1 {
         color: white;
         font-size: 2.5rem;
         text-transform: uppercase;
         margin: .5rem 0 2rem;
       }
-      
-      p{
+
+      p {
         text-transform: uppercase;
         color: white;
         font-weight: 600;
       }
-      .event{
-        @include flex(row,flex-start,flex-start);
+
+      .event {
+        @include flex(row, flex-start, flex-start);
         padding: 2rem 0;
         max-width: 500px;
 
-        &.border-dotted{
+        &.border-dotted {
           border-bottom: 1px dotted $fill-gold;
         }
 
-        p{
+        p {
           font-size: 1.3rem;
         }
 
-        .left{
+        .left {
           text-align: center;
           margin-right: 2.5rem;
         }
 
-        .right{
+        .right {
           padding-top: .6rem;
 
-          span{
+          span {
             display: inline-block;
             padding-top: 1rem;
             font-size: .8rem;
             vertical-align: middle;
-            
-            img{
-              margin: 0 .33rem .2rem 0 ;
+
+            img {
+              margin: 0 .33rem .2rem 0;
               vertical-align: middle;
               display: inline-block;
               height: 15px;
@@ -116,26 +124,40 @@ margin-bottom: .5rem;
           }
         }
       }
-      
-      span{
+
+      span {
         color: $fill-red;
         font-size: .8rem;
         font-weight: 600;
         text-transform: uppercase;
-        &.txt-big{
+
+        &.txt-big {
           display: inline-block;
           font-weight: 700;
           font-size: 3rem;
         }
-        
+
       }
-      
+
     }
 
-    img{
+    >img {
+      width: 100%;
       display: block;
     }
   }
 }
+
+a.pizza-popup {
+  @include flex(row, center, center);
+  background-color: $bg-light;
+
+  &.up{
+    @include pop-up-pizza(49.66rem, 2rem);
+  }
   
+  &.down{
+    @include pop-up-pizza(13.5rem, 2rem);
+  }
+}
 </style>
