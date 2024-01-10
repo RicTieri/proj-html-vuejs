@@ -5,6 +5,8 @@
     <MainAdvertise/>
     <MainPartner/>
     <MainMenu/>
+    <MainEvents/>
+    <MainBooking/>
   </main>
 </template>
 <script>
@@ -13,6 +15,8 @@ import MainSpecials from './MainSpecials.vue';
 import MainAdvertise from './MainAdvertise.vue';
 import MainPartner from './MainPartner.vue';
 import MainMenu from './MainMenu.vue';
+import MainEvents from './MainEvents.vue';
+import MainBooking from './MainBooking.vue';
 
 export default {
   components:{
@@ -20,7 +24,9 @@ export default {
     MainSpecials,
     MainAdvertise,
     MainPartner,
-    MainMenu
+    MainMenu,
+    MainEvents,
+    MainBooking
   }
   
 }
